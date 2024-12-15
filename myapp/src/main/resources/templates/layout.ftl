@@ -1,6 +1,18 @@
-<#import "layout.ftl" as layout>
-
-<@layout.site>
-    <h2>Willkommen auf der Startseite!</h2>
-    <p>Hier kannst du Inhalte direkt definieren.</p>
-</@layout.site>
+<#macro layout title>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+</head>
+<body>
+    <#include "header.ftl">
+    
+    <div class="content">
+        <#nested>
+    </div>
+    
+    <#include "footer.ftl">
+</body>
+</html>
+</#macro>
